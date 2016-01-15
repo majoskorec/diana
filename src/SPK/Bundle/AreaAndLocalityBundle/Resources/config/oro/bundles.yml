@@ -1,0 +1,2 @@
+bundles:
+    - { name: SPK\Bundle\AreaAndLocalityBundle\SPKAreaAndLocalityBundle, priority: 100 }
