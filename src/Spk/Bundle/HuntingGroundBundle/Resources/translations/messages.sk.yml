@@ -1,0 +1,39 @@
+spk:
+    huntingground:
+        menu:
+            hunting_ground_tab.label: Revír
+        #
+        # Spk/Bundle/HuntingGroundBundle/Entity/HuntingGround
+        #
+        
+        #
+        # Spk/Bundle/HuntingGroundBundle/Entity/Area
+        #
+        area:
+            entity_label:               Oblasť
+            entity_plural_label:        Oblasti
+            entity_description:         Oblasť
+            
+            id.label:                   Id
+            name.label:                 Názov oblasti
+            shortname.label:            Skratka oblasti
+            area_type.label:            Typ
+            active.label:               Aktívny
+            created_at.label:           Vytvorené
+            updated_at.label:           Upravené
+        #
+        # Spk/Bundle/HuntingGroundBundle/Entity/Locality
+        #
+        locality:
+            entity_label:               Lokalita
+            entity_plural_label:        Lokality
+            entity_description:         Lokalita
+            
+            id.label:                   Id
+            name.label:                 Názov oblasti
+            shortname.label:            Skratka oblasti
+            locality_type:              Typ
+            active.label:               Aktívny
+            created_at.label:           Vytvorené
+            updated_at.label:           Upravené       
+            

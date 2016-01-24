@@ -1,0 +1,2 @@
+bundles:
+    - { name: Spk\Bundle\CommonBundle\SpkCommonBundle, priority: 999 }

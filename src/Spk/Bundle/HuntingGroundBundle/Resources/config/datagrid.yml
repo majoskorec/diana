@@ -1,0 +1,184 @@
+datagrid:
+# ----------------------------------------------------------------------------------------------------------------------
+    area-grid:
+        acl_resource: spk_huntingground_area_view
+        source:
+            type: orm
+            query:
+                select:
+                    - a.id
+                    - a.name
+                    - a.shortname
+                    - a.active
+                    - a.createdAt
+                    - a.updatedAt
+                    - b.label as areaTypeName
+                from:
+                    - { table: %spk_hunting_ground.area.entity.class%, alias: a }
+                join:
+                    left:
+                        - { join: a.areaType, alias: b }
+        properties:
+            id: ~
+            view_link:
+                type:          url
+                route:         spk_huntingground_area_view
+                params:        [ id ]
+        columns:
+            id:
+                label:         spk.huntingground.area.id.label
+            name:
+                label:         spk.huntingground.area.name.label
+            shortname:
+                label:         spk.huntingground.area.shortname.label
+            areaTypeName:
+                label:         spk.huntingground.area.area_type.label
+                frontend_type: relation
+            active:
+                label:         spk.huntingground.area.active.label
+                frontend_type: boolean
+            createdAt:
+                label:         oro.ui.created_at
+                frontend_type: datetime
+            updatedAt:
+                label:         oro.ui.updated_at
+                frontend_type: datetime
+        sorters:
+            columns:
+                name:
+                    data_name: a.name
+                shortname:
+                    data_name: a.shortname
+                areaTypeName:
+                    data_name: areaTypeName
+                createdAt:
+                    data_name: a.createdAt
+                updatedAt:
+                    data_name: a.updatedAt
+        filters:
+            columns:
+                name:
+                    type:      string
+                    data_name: a.name
+                shortname:
+                    type:      string
+                    data_name: a.shortname
+                areaTypeName:
+                    type:      string
+                    data_name: areaTypeName
+                active:
+                    type:      boolean
+                    data_name: a.active
+                areaTypeName:
+                    type: entity
+                    label: oro.user.owner.label
+                    data_name: a.areaType
+                    options:
+                        field_options:
+                            class: SpkHuntingGroundBundle:Area
+                            multiple: false
+                            property: label
+                            translatable_options: true
+                createdAt:
+                    type:      datetime
+                    data_name: a.createdAt
+                updatedAt:
+                    type:      datetime
+                    data_name: a.updatedAt
+        actions:
+            view:
+                type:          navigate
+                acl_resource:  spk_huntingground_area_view
+                label:         oro.grid.action.view
+                icon:          eye-open
+                link:          view_link
+                rowAction:     true
+        options:
+            entityHint:        area
+            export:            true
+            entity_pagination: true
+# ----------------------------------------------------------------------------------------------------------------------
+    locality-grid:
+        acl_resource: spk_huntingground_locality_view
+        source:
+            type: orm
+            query:
+                select:
+                    - a.id
+                    - a.name
+                    - a.shortname
+                    - a.active
+                    - a.createdAt
+                    - a.updatedAt
+                    - b.label as localityTypeName
+                from:
+                    - { table: %spk_hunting_ground.locality.entity.class%, alias: a }
+                join:
+                    left:
+                        - { join: a.localityType, alias: b }
+        properties:
+            id: ~
+            view_link:
+                type:          url
+                route:         spk_huntingground_locality_view
+                params:        [ id ]
+        columns:
+            id:
+                label:         spk.huntingground.locality.id.label
+            name:
+                label:         spk.huntingground.locality.name.label
+            shortname:
+                label:         spk.huntingground.locality.shortname.label
+            localityTypeName:
+                label:         spk.huntingground.locality.locality_type.label
+                frontend_type: relation
+            active:
+                label:         spk.huntingground.locality.active.label
+                frontend_type: boolean
+            createdAt:
+                label:         oro.ui.created_at
+                frontend_type: datetime
+            updatedAt:
+                label:         oro.ui.updated_at
+                frontend_type: datetime
+        sorters:
+            columns:
+                name:
+                    data_name: a.name
+                shortname:
+                    data_name: a.shortname
+                localityTypeName:
+                    data_name: localityTypeName
+                createdAt:
+                    data_name: a.createdAt
+                updatedAt:
+                    data_name: a.updatedAt
+        filters:
+            columns:
+                name:
+                    type:      string
+                    data_name: a.name
+                shortname:
+                    type:      string
+                    data_name: a.shortname
+                localityTypeName:
+                    type:      string
+                    data_name: localityTypeName
+                createdAt:
+                    type:      datetime
+                    data_name: a.createdAt
+                updatedAt:
+                    type:      datetime
+                    data_name: a.updatedAt
+        actions:
+            view:
+                type:          navigate
+                acl_resource:  orocrm_account_view
+                label:         oro.grid.action.view
+                icon:          eye-open
+                link:          view_link
+                rowAction:     true
+        options:
+            entityHint:        area
+            export:            true
+            entity_pagination: true

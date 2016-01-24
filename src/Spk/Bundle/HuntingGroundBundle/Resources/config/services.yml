@@ -1,0 +1,9 @@
+parameters:
+    spk_hunting_ground.area.entity.class:           Spk\Bundle\HuntingGroundBundle\Entity\Area
+    spk_hunting_ground.locality.entity.class:       Spk\Bundle\HuntingGroundBundle\Entity\Locality
+    spk_hunting_ground.hunting_ground.entity.class: Spk\Bundle\HuntingGroundBundle\Entity\HuntingGround
+
+services:
+#    spk_hunting_ground.example:
+#        class: Spk\Bundle\HuntingGroundBundle\Example
+#        arguments: [@service_id, "plain_value", %parameter%]

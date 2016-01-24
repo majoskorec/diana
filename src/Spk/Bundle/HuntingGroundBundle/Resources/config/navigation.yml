@@ -1,0 +1,58 @@
+oro_menu_config:
+    items:
+        hunting_ground_tab:
+            label: 'spk.huntingground.menu.hunting_ground_tab.label'
+            uri: '#'
+            extras:
+                icon: icon-moon
+                position: 10
+
+        area_list:
+            label: 'spk.huntingground.area.entity_plural_label'
+            route: 'spk_huntingground_area_index'
+            extras:
+                position: 5
+                routes: ['spk_huntingground_area_*']
+                description: 'spk.huntingground.menu.area_list.description'
+
+        locality_list:
+            label: 'spk.huntingground.locality.entity_plural_label'
+            route: 'spk_huntingground_locality_index'
+            extras:
+                position: 6
+                routes: ['spk_huntingground_locality_*']
+                description: 'spk.huntingground.menu.locality_list.description'
+
+        huntingground_list:
+            label: 'spk.huntingground.entity_plural_label'
+            route: 'spk_huntingground_huntingground_index'
+            extras:
+                position: 7
+                routes: ['spk_huntingground_huntingground_*']
+                description: 'spk.huntingground.menu.huntingground_list.description'
+
+#        shortcut_list_area:
+#            label: 'spk.hunting_ground.menu.shortcut_list_area.label'
+#            route: 'spk_area_index'
+#            extras:
+#                description: 'spk.hunting_ground.menu.shortcut_list_area.description'
+
+    tree:
+        application_menu:
+            children:
+                hunting_ground_tab:
+                    children:
+                        area_list: ~
+                        locality_list: ~
+                        huntingground_list: ~
+
+#        shortcuts:
+#            children:
+#                shortcut_new_area: ~
+#                shortcut_list_area: ~
+
+oro_titles:
+#    spk_area_index: ~
+#    spk_area_view: '%%area.name%%'
+#    spk_area_create: spk.hunting_ground.area.entity_create_label
+#    spk_area_update: '%%area.name%% - Edit'

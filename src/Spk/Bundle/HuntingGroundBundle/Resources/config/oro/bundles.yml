@@ -1,0 +1,2 @@
+bundles:
+    - { name: Spk\Bundle\HuntingGroundBundle\SpkHuntingGroundBundle, priority: 1000 }

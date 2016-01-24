@@ -1,0 +1,4 @@
+spk_hunting_ground_bundle:
+    resource:     "@SpkHuntingGroundBundle/Controller"
+    type:         annotation
+    prefix:       /
